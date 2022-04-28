@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers, compose, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import logger from 'redux-logger';
-import itemReducer from '../redux/items/items';
+import itemReducer from './reducers/itemReducer';
 
 const reducer = combineReducers({
   items: itemReducer,
