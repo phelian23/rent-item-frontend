@@ -10,11 +10,4 @@ class MyFavourites extends Component {
    }
 }
 
-
-// const MyFavourites = () => {
-//   return (
-//     <div>MyFavourites</div>
-//   )
-// }
-
 export default MyFavourites
