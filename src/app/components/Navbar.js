@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
+import './navbar.css'
 
 const NavBar = () => {
   const openNav = () => {
@@ -14,7 +15,7 @@ const NavBar = () => {
   
   return (
     <div>
-        <Navbar collapseOnSelect fixed="top" expand="md" bg="" variant="dark" className="d-block main-navigation">
+        <Navbar collapseOnSelect fixed="top" expand="md" bg="dark" variant="dark" className="d-block main-navigation">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={openNav}/>
             <div className="d-flex overlay d-lg-none" onClick={closeNav}></div>
             <Container className='d-lg-flex sidebar' id="responsive-navbar-nav">
