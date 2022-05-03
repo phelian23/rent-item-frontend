@@ -35,6 +35,7 @@ const NavBar = () => {
             <Nav className='order-lg-3'>
                 <Nav.Link href="/signin">Login</Nav.Link>
                 <Nav.Link href="/signup">Sign Up</Nav.Link>
+                <i class="fa fa-search" aria-hidden="true"></i>
               </Nav>
             </Container>
         </Navbar>
