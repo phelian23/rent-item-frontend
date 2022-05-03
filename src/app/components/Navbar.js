@@ -1,5 +1,7 @@
 import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faSearch} from '@fortawesome/free-solid-svg-icons'
 
 const NavBar = () => {
   const openNav = () => {
@@ -12,7 +14,7 @@ const NavBar = () => {
   
   return (
     <div>
-        <Navbar collapseOnSelect fixed="top" expand="md" bg="dark" variant="dark" className="d-block main-navigation">
+        <Navbar collapseOnSelect fixed="top" expand="md" bg="" variant="dark" className="d-block main-navigation">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={openNav}/>
             <div className="d-flex overlay d-lg-none" onClick={closeNav}></div>
             <Container className='d-lg-flex sidebar' id="responsive-navbar-nav">
@@ -35,7 +37,7 @@ const NavBar = () => {
             <Nav className='order-lg-3'>
                 <Nav.Link href="/signin">Login</Nav.Link>
                 <Nav.Link href="/signup">Sign Up</Nav.Link>
-                <i class="fa fa-search" aria-hidden="true"></i>
+                <FontAwesomeIcon icon={faSearch} className="search-icon"></FontAwesomeIcon>
               </Nav>
             </Container>
         </Navbar>
