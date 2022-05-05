@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { signUp } from '../redux/actions/authentications'
 import Validation from './Validation'
 
 
@@ -14,6 +17,9 @@ const SignUp = () => {
 
     const [errors, setErrors] = useState({})
 
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
     const handleChange = (e) => {
         setUser({
             ...user,
@@ -26,9 +32,8 @@ const SignUp = () => {
         const errors = Validation(user)
         setErrors(errors)
         if (Object.keys(errors).length === 0) {
-            alert(`
-                Welcome ${user.name}!
-            `)
+            dispatch(signUp(user))
+            navigate('/signin')
         }
     }
 
