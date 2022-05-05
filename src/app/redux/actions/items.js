@@ -1,32 +1,32 @@
 import { getScooters, addScooter, deleteScooter } from "../../api/item";
+import { Constants } from "./constant";
 
 export const getAllScooters = () => async (dispatch) => {
   const response = await getScooters();
-  if (response.status === 200) {
-    dispatch({ type: "GET_ALL_SCOUTERS_SUCCESS", payload: response.data });
-  } else {
-    dispatch({ type: "GET_ALL_SCOUTERS_FAILURE", payload: response.data });
+  try {
+    dispatch({ type: Constants.GET_ALL_SCOOTERS_SUCCESS, payload: response });
+  } catch (error) {
+      dispatch({ type: Constants.GET_ALL_SCOOTERS_FAILURE, payload: error });
   }
 }
 
   export const addNewScooter = (data) => async (dispatch) => {
     const response = await addScooter(data);
-    if (response.status === 200) {
-      dispatch({ type: "ADD_NEW_SCOOTER_SUCCESS", payload: response.data });
-    }
-    else {
-      dispatch({ type: "ADD_NEW_SCOOTER_FAILURE", payload: response.data });
+    try {
+      dispatch({ type: Constants.ADD_NEW_SCOOTER_SUCCESS, payload: response });
+    } catch (error) {
+      dispatch({ type: Constants.ADD_NEW_SCOOTER_FAILURE, payload: error });
     }
   }
 
   export const deleteScooterById = (id) => async (dispatch) => {
     const response = await deleteScooter(id);
-    if (response.status === 200) {
-      dispatch({ type: "DELETE_SCOOTER_SUCCESS", payload: response.data });
+    try {
+      dispatch({ type: Constants.DELETE_SCOOTER_SUCCESS, payload: response });
     }
-    else {
-      dispatch({ type: "DELETE_SCOOTER_FAILURE", payload: response.data });
+    catch (error) {
+      dispatch({ type: Constants.DELETE_SCOOTER_FAILURE, payload: error });
     }
   }
 
-  export const displayScooter = (id) => ({ type: "DISPLAY_SCOOTER", payload: id });
+  export const displayScooter = (id) => ({ type: Constants.DISPLAY_SCOOTER, payload: id });

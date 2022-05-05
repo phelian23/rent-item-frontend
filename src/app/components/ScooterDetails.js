@@ -13,7 +13,7 @@ const ScooterDetails = () => {
         </div>
         <div>
         <div className="details-card mx-auto text-center">
-          <img className="card-img-det" src={scooter.image} alt="Card cap" />
+          <img className="card-img-det" src={scooter.photo} alt="Card cap" />
           <div className="card-body d-flex justify-content-between img-text">
             <h5 className="card-title">{scooter.name}</h5>
             <p className="card-text">{scooter.price}</p>

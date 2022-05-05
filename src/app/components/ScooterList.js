@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 const ScooterList = () => {
   const dispatch = useDispatch()
   const scooters = useSelector((state) => state.items.scooters)
+  console.log(scooters)
 
   useEffect(() => {
     dispatch(getAllScooters())
@@ -22,7 +23,7 @@ const ScooterList = () => {
                     <li className="list-group-item col-md-4" key={scooter.id}>
                       <Link to={`/scooter/${scooter.id}`} onClick={() => dispatch(displayScooter(scooter.id))} >
                         <div className="scoot-card">
-                            <img className="card-img-top" src={scooter.image} alt="Card cap" />
+                            <img className="card-img-top" src={scooter.photo} alt="Card cap" />
                             <div className="card-body d-flex justify-content-between mt-4">
                                 <h5 className="card-title">{scooter.name}</h5>
                                 <p className="card-text">{scooter.price}</p>
