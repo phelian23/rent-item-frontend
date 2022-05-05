@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { signIn } from '../redux/actions/authentications'
 import Validation from './Validation'
 
 const Signin = () => {
@@ -10,6 +12,8 @@ const Signin = () => {
   })
 
   const [errors, setErrors] = useState({})
+
+  const dispatch = useDispatch()
 
     const handleChange = (e) => {
         setUser({
@@ -24,9 +28,7 @@ const Signin = () => {
         const errors = Validation(user)
         setErrors(errors)
         if (Object.keys(errors).length === 0) {
-            alert(`
-                Welcome ${user.email}!
-            `)
+            dispatch(signIn(user))
         }
     }
 

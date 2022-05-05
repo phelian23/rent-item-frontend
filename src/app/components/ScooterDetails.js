@@ -1,17 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const ScooterDetails = () => {
-    const scooters = [
-        {
-            id: 1,
-            name: 'Scooter 1',
-            description: 'This is a description for scooter 1',
-            image: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-            price: '$100',
-        }
-        ];
+  const scooters = useSelector((state) => state.items.scooters)
 
-    const scooter = scooters[0];
+    const scooter = scooters.find((scooter) => scooter.display === true)
 
   return (
     <div className='text-lg-center'>
@@ -20,7 +13,7 @@ const ScooterDetails = () => {
         </div>
         <div>
         <div className="details-card mx-auto text-center">
-          <img className="card-img-det" src={scooter.image} alt="Card cap" />
+          <img className="card-img-det" src={scooter.photo} alt="Card cap" />
           <div className="card-body d-flex justify-content-between img-text">
             <h5 className="card-title">{scooter.name}</h5>
             <p className="card-text">{scooter.price}</p>

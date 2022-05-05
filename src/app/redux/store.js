@@ -3,9 +3,11 @@ import { combineReducers, compose, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import logger from 'redux-logger';
 import itemReducer from './reducers/itemReducer';
+import userReducer from './reducers/userReducer';
 
 const reducer = combineReducers({
   items: itemReducer,
+  user: userReducer,
 
   // Add other reducers here
 });
