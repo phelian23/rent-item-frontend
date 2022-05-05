@@ -1,7 +1,19 @@
 import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { signOut } from '../redux/actions/authentications'
+import { useNavigate } from 'react-router-dom'
 
 const NavBar = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const user = useSelector(state => state.user)
+
+  const handleSignOut = () => {
+    dispatch(signOut())
+    navigate('/')
+  }
+
   const openNav = () => {
     document.querySelector(".main-navigation").classList.add("active");
   }
@@ -26,16 +38,24 @@ const NavBar = () => {
                 />{' '}
                 Scoot
             </Navbar.Brand>
-            <Nav className="order-lg-2 mr-auto">
+            {user.isSignIn ? (
+              <>
+                <Nav className="order-lg-2 mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/myfavourites">My Favourites</Nav.Link>
                 <Nav.Link href="/addscooter">Add Scooter</Nav.Link>
                 <Nav.Link href="/deletescooter">Delete Scooter</Nav.Link>
-            </Nav>
+              </Nav>
+                <Nav className="order-lg-3 ml-auto">
+                    <Nav.Link href="#" onClick={() => handleSignOut()}>Sign Out</Nav.Link>
+                </Nav>
+              </>
+            ) : (
             <Nav className='order-lg-3'>
                 <Nav.Link href="/signin">Login</Nav.Link>
                 <Nav.Link href="/signup">Sign Up</Nav.Link>
-              </Nav>
+            </Nav>
+            )}
             </Container>
         </Navbar>
     </div>
