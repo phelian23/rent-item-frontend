@@ -1,14 +1,8 @@
 import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
-<<<<<<< HEAD
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faSearch} from '@fortawesome/free-solid-svg-icons'
-import './navbar.css'
-=======
 import { useDispatch, useSelector } from 'react-redux'
 import { signOut } from '../redux/actions/authentications'
 import { useNavigate } from 'react-router-dom'
->>>>>>> dev
 
 const NavBar = () => {
   const dispatch = useDispatch()
