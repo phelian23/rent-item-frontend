@@ -5,9 +5,9 @@ class MyFavourites extends Component {
    render() {
      return (
        <div>
-         <header className="header-container">
+         <section className="card-container">
 
-         </header>
+         </section>
        </div>
      )
    }
