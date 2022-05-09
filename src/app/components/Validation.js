@@ -12,10 +12,10 @@ const Validation = (user) => {
     if (!user.password) {
         errors.password = 'Password is required';
     }
-    if (!user.password2) {
-        errors.password2 = 'Confirm Password is required';
-    } else if (user.password !== user.password2) {
-        errors.password2 = 'Passwords must match';
+    if (!user.password_confirmation) {
+        errors.password_confirmation = 'Confirm Password is required';
+    } else if (user.password !== user.password_confirmation) {
+        errors.password_confirmation = 'Passwords must match';
     }
 
     return errors;

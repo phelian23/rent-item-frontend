@@ -8,7 +8,7 @@ const AddScooter = () => {
     name: '',
     price: '',
     description: '',
-    image: '',
+    photo: '',
   })
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -27,7 +27,7 @@ const AddScooter = () => {
       name: '',
       price: '',
       description: '',
-      image: '',
+      photo: '',
     })
     navigate('/')
   }
@@ -41,6 +41,7 @@ const AddScooter = () => {
         <div className="form-group my-3">
           <label htmlFor="exampleInputName">Name</label>
           <input
+            name="name"
             type="text"
             className="form-input1"
             id="exampleInputName"
@@ -51,6 +52,7 @@ const AddScooter = () => {
         <div className="form-group mb-3 mx-3 mx-lg-0">
           <label htmlFor="exampleInputImage">Image</label>
           <input
+            name="photo"
             type="text"
             className="form-input1"
             id="exampleInputImage"
@@ -61,6 +63,7 @@ const AddScooter = () => {
         <div className="form-group mb-3 mx-3 mx-lg-0">
           <label htmlFor="exampleInputPrice">Price</label>
           <input
+            name="price"
             type="text"
             className="form-input1"
             id="exampleInputPrice"
@@ -71,6 +74,7 @@ const AddScooter = () => {
         <div className="form-group mb-3 mx-3 mx-lg-0">
           <label htmlFor="exampleInputDescription">Description</label>
           <textarea
+            name='description'
             className="form-input1"
             id="exampleInputDescription"
             rows="3"

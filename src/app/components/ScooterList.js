@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux'
 const ScooterList = () => {
   const dispatch = useDispatch()
   const scooters = useSelector((state) => state.items.scooters)
-  console.log(scooters)
 
   useEffect(() => {
     dispatch(getAllScooters())

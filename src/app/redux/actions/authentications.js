@@ -13,8 +13,9 @@ export const signUp = (data) => async (dispatch) => {
 
   export const signIn = (data) => async (dispatch) => {
     const response = await hitApiWithSignIn(data);
+    console.log(response)
     try {
-      const { token, user } = response.data;
+      const { token, user } = response;
       localStorage.setItem('token', token);
       localStorage.setItem('session-status', true);
       dispatch({ type: Constants.SIGN_IN_SUCCESS, payload: user });

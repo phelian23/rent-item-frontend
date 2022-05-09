@@ -8,11 +8,11 @@ import Validation from './Validation'
 
 
 const SignUp = () => {
-    const [user, setUser] = useState({
+    const [newUser, setNewUser] = useState({
         name: '',
         email: '',
         password: '',
-        password2: '',
+        password_confirmation: '',
     })
 
     const [errors, setErrors] = useState({})
@@ -21,18 +21,22 @@ const SignUp = () => {
     const navigate = useNavigate()
 
     const handleChange = (e) => {
-        setUser({
-            ...user,
+        setNewUser({
+            ...newUser,
             [e.target.name]: e.target.value
         })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const errors = Validation(user)
+        const errors = Validation(newUser)
         setErrors(errors)
+        const userData = {
+            user: newUser
+        }
+        console.log(userData)
         if (Object.keys(errors).length === 0) {
-            dispatch(signUp(user))
+            dispatch(signUp(userData))
             navigate('/signin')
         }
     }
@@ -52,7 +56,7 @@ const SignUp = () => {
                     className="form-input1"
                     placeholder="Enter name"
                     onChange={handleChange}
-                    value={user.name}
+                    value={newUser.name}
                 />
                 {errors.name && <p className="text-danger">{errors.name}</p>}
             </div>
@@ -65,7 +69,7 @@ const SignUp = () => {
                     className="form-input1"
                     placeholder="Enter email"
                     onChange={handleChange}
-                    value={user.email}
+                    value={newUser.email}
                 />
                 {errors.email && <p className="text-danger">{errors.email}</p>}
             </div>
@@ -78,7 +82,7 @@ const SignUp = () => {
                     className="form-input1"
                     placeholder="Password"
                     onChange={handleChange}
-                    value={user.password}
+                    value={newUser.password}
                 />
                 {errors.password && <p className="text-danger">{errors.password}</p>}
             </div>
@@ -86,12 +90,12 @@ const SignUp = () => {
                 <label htmlFor="password2">Confirm Password</label>
                 <input
                     type="password"
-                    name="password2"
+                    name="password_confirmation"
                     id="password2"
                     className="form-input1"
                     placeholder="Confirm Password"
                     onChange={handleChange}
-                    value={user.password2}
+                    value={newUser.password2}
                 />
                 {errors.password2 && <p className="text-danger">{errors.password2}</p>}
             </div>
