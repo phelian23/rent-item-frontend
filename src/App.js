@@ -9,6 +9,7 @@ import ResetPassword from './app/components/ResetPassword';
 import AddScooter from './app/components/AddScooter';
 import DeleteScooter from './app/components/DeleteScooter';
 import MyFavourites from './app/components/MyFavourites';
+import ScooterDetails from './app/components/ScooterDetails';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/addscooter" element={<AddScooter />} />
         <Route path="/deletescooter" element={<DeleteScooter />} />
         <Route path="/myfavourites" element={<MyFavourites />} />
+        <Route path="/scooter/:id" element={<ScooterDetails />} />
       </Routes>
     </div>
   );
