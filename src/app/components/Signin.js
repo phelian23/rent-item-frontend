@@ -28,9 +28,14 @@ const Signin = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         const errors = Validation(user)
+        const newUser = {
+          username: user.email,
+          password: user.password
+        }
+        console.log(newUser)
         setErrors(errors)
         if (Object.keys(errors).length === 0) {
-            dispatch(signIn(user))
+            dispatch(signIn(newUser))
             navigate('/')
         }
     }
