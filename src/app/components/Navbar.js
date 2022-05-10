@@ -26,7 +26,7 @@ const NavBar = () => {
     <div>
         <Navbar collapseOnSelect fixed="top" expand="md" bg="dark" variant="dark" className="d-block main-navigation">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={openNav}/>
-            <div className='icon-container'><FontAwesomeIcon icon={faSearch} className="search-icon d-sm-inline"></FontAwesomeIcon></div>
+            {/* <div className='icon-container'><FontAwesomeIcon icon={faSearch} className="search-icon d-sm-inline"></FontAwesomeIcon></div> */}
             <div className="d-flex overlay d-lg-none" onClick={closeNav}></div>
             <Container className='d-lg-flex sidebar' id="responsive-navbar-nav">
             <Navbar.Brand href="/" className="order-2 order-lg-1 mr-auto mr-lg-3 ml-3 ml-lg-0">
@@ -39,7 +39,7 @@ const NavBar = () => {
                 />{' '}
                 Scoot
             </Navbar.Brand>
-            {user.isSignIn ? (
+            {/* {user.isSignIn ? ( */}
               <>
                 <Nav className="order-lg-2 mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
@@ -51,12 +51,12 @@ const NavBar = () => {
                     <Nav.Link href="#" onClick={() => handleSignOut()}>Sign Out</Nav.Link>
                 </Nav>
               </>
-            ) : (
+            {/* ) : ( */}
             <Nav className='order-lg-3'>
                 <Nav.Link href="/signin">Login</Nav.Link>
                 <Nav.Link href="/signup">Sign Up</Nav.Link>
             </Nav>
-            )}
+            {/* )} */}
             </Container>
             
         </Navbar>
