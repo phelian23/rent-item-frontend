@@ -10,7 +10,12 @@ const MyFavourites  = ()=>{
       id: 1,
       title: "Classic Blue",
       price: "$ 3,600"
-    }
+    },
+    {
+      id: 2,
+      title: "Light Blue",
+      price: "$ 2,500"
+    },
   ]
 }
 export default MyFavourites
