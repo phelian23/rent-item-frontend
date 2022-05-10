@@ -21,7 +21,11 @@ const MyFavourites  = ()=>{
       title: "White Red",
       price: "$ 4,000"
     },
-    
+    {
+      id: 4,
+      title: "Black Orange",
+      price: "$ 5,400"
+    },
 
   ]
 }
