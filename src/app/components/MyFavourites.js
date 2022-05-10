@@ -5,6 +5,13 @@ import {Card, } from 'react-bootstrap'
 
 const MyFavourites  = ()=>{
 
+  const favourites = [
+    {
+      id: 1,
+      title: "Classic Blue",
+      price: "$ 3,600"
+    }
+  ]
 }
 export default MyFavourites
 
