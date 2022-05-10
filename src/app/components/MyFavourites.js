@@ -29,13 +29,13 @@ const MyFavourites = ()=> {
           id: 4,
           title: "Black Orange",
           price: "$ 5,400",
-          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuQQt992w6pmjU_BnL_Kt9SWHbdBlW4QBP6n5lacebvL0pkpspd2Hn13l-8_YcWx_zz-0&usqp=CAU"
+          image: "https://image.shutterstock.com/z/stock-photo--d-rendering-of-a-black-orange-scooter-on-white-background-725302228.jpg"
         },
         {
           id: 5,
           title: "Red Black",
           price: "$ 3,500",
-          image: "https://techcrunch.com/wp-content/uploads/2021/12/bounce-infinity-e1.jpg"
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNlEO9jMhf6h6zkVRWoPYldP8Kih5QG5adk2n8pxNJgm0EHuSN7w6gqxvGd6Iuy54BRPI&usqp=CAU"
         },
         {
           id: 6,
