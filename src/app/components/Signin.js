@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { signIn } from '../redux/actions/authentications'
-import Validation from './Validation'
+import { validationLogin } from './Validation'
 
 const Signin = () => {
   const [user, setUser] = useState({
@@ -27,16 +27,16 @@ const Signin = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const errors = Validation(user)
+        const errors = validationLogin(user)
         const newUser = {
           username: user.email,
           password: user.password
         }
-        console.log(newUser)
         setErrors(errors)
+        console.log(errors)
         if (Object.keys(errors).length === 0) {
-            dispatch(signIn(newUser))
-            navigate('/')
+          dispatch(signIn(newUser))
+          navigate('/')
         }
     }
 

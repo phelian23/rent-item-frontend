@@ -1,4 +1,4 @@
-const Validation = (user) => {
+export const validation = (user) => {
     let errors = {};
 
     if (!user.name) {
@@ -21,4 +21,17 @@ const Validation = (user) => {
     return errors;
 }
 
-export default Validation
+export const validationLogin = (user) => {
+    let errors = {};
+
+    if (!user.email) {
+        errors.email = 'Email is required';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(user.email)) {
+        errors.email = 'Invalid email address';
+    }
+    if (!user.password) {
+        errors.password = 'Password is required';
+    }
+
+    return errors;
+}

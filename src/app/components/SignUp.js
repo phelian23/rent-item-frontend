@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { signUp } from '../redux/actions/authentications'
-import Validation from './Validation'
+import { validation } from './Validation'
 
 
 const SignUp = () => {
@@ -29,7 +29,7 @@ const SignUp = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const errors = Validation(newUser)
+        const errors = validation(newUser)
         setErrors(errors)
         const userData = {
             user: newUser

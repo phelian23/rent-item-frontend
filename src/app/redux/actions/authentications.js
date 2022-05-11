@@ -14,13 +14,12 @@ export const signUp = (data) => async (dispatch) => {
   export const signIn = (data) => async (dispatch) => {
     const response = await hitApiWithSignIn(data);
     console.log(response)
-    try {
-      const { token, user } = response;
-      localStorage.setItem('token', token);
+    if (response.status === 200) {
+      const { user } = response;
       localStorage.setItem('session-status', true);
       dispatch({ type: Constants.SIGN_IN_SUCCESS, payload: user });
-    } catch (error) {
-      dispatch({ type: Constants.SIGN_IN_FAILURE, payload: error.response });
+    } else {
+      dispatch({ type: Constants.SIGN_IN_FAILURE, payload: response });
     }
   }
 
@@ -35,6 +34,7 @@ export const signUp = (data) => async (dispatch) => {
 
   export const signOut = () => async (dispatch) => {
     const response = await hitApiWithSignOut();
+    console.log(response)
     try {
       dispatch({ type: Constants.SIGN_OUT_SUCCESS, payload: response });
       clearSession();
