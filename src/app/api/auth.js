@@ -4,6 +4,7 @@ const BASE_URL = "http://localhost:3000";
 
 const hitApiWithSignIn = async (data) => {
   try {
+      console.log(JSON.stringify(data))
     const response = await fetch(`${BASE_URL}/users/sign_in`, {
         method: "POST",
         headers: {
@@ -56,7 +57,7 @@ const hitApiWithResetPassword = async (data) => {
     const hitApiWithSignOut = async () => {
         try {
             const response = await fetch(`${BASE_URL}/users/sign_out`, {
-                method: "GET",
+                method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": getToken()

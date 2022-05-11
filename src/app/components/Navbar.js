@@ -1,13 +1,14 @@
 import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { signOut } from '../redux/actions/authentications'
 import { useNavigate } from 'react-router-dom'
 
 const NavBar = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const user = useSelector(state => state.user)
+
+  const sessionStatus = localStorage.getItem('session-status')
 
   const handleSignOut = () => {
     dispatch(signOut())
@@ -38,7 +39,7 @@ const NavBar = () => {
                 />{' '}
                 Scoot
             </Navbar.Brand>
-            {user.isSignIn ? (
+            {sessionStatus ? (
               <>
                 <Nav className="order-lg-2 mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
