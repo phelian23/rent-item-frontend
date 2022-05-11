@@ -12,8 +12,10 @@ const ScooterDetails = () => {
 
     const addToFavouritesHandler = () => {
       const data = {
-        user_id: user.id,
-        item_id: scooter.id
+        favourite: {
+          user_id: user.id,
+          item_id: scooter.id,
+        },
       }
       dispatch(addToFavourites(data))
     }

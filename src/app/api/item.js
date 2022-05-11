@@ -2,7 +2,7 @@ const BASE_URL = "http://localhost:3000";
 
 const getScooters = async () => {
     try {
-        const response = await fetch(`${BASE_URL}/v1/items`, {
+        const response = await fetch(`${BASE_URL}/api/v1/items`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -17,7 +17,7 @@ const getScooters = async () => {
 
 const addScooter = async (data) => {
     try {
-        const response = await fetch(`${BASE_URL}/v1/items`, {
+        const response = await fetch(`${BASE_URL}/api/v1/items`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -33,7 +33,7 @@ const addScooter = async (data) => {
 
 const deleteScooter = async (id) => {
     try {
-        const response = await fetch(`${BASE_URL}/v1/items/${id}`, {
+        const response = await fetch(`${BASE_URL}/api/v1/items/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"

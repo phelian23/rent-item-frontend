@@ -22,7 +22,10 @@ const AddScooter = () => {
 
   const handleAddSubmit = (e) => {
     e.preventDefault()
-    dispatch(addNewScooter(scooter))
+    const itemData = {
+      item: scooter
+    }
+    dispatch(addNewScooter(itemData))
     setScooter({
       name: '',
       price: '',
