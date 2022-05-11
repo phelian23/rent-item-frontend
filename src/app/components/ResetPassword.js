@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
-import Validation from './Validation'
 
 const ResetPassword = () => {
     const [user, setUser] = useState({
@@ -18,7 +17,6 @@ const ResetPassword = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const errors = Validation(user)
         setErrors(errors)
         if (Object.keys(errors).length === 0) {
             alert(`
