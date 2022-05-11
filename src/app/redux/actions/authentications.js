@@ -20,10 +20,10 @@ export const signUp = (data) => async (dispatch) => {
   export const signIn = (data) => async (dispatch) => {
     const response = await hitApiWithSignIn(data);
     if (response.status.code === 200) {
-      const { data } = response;
-      localStorage.setItem('user-data', data);
+      localStorage.setItem('token', response.headers.authorization);
+      localStorage.setItem('user-data', response.data);
       localStorage.setItem('session-status', true);
-      dispatch({ type: Constants.SIGN_IN_SUCCESS, payload: data });
+      dispatch({ type: Constants.SIGN_IN_SUCCESS, payload: response.data });
     } else {
       dispatch({ type: Constants.SIGN_IN_FAILURE, payload: response });
     }
@@ -40,7 +40,6 @@ export const signUp = (data) => async (dispatch) => {
 
   export const signOut = () => async (dispatch) => {
     const response = await hitApiWithSignOut();
-    console.log(response)
     try {
       dispatch({ type: Constants.SIGN_OUT_SUCCESS, payload: response });
       clearSession();
