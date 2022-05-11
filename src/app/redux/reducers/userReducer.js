@@ -23,7 +23,7 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         user: action.payload,
-        isSignIn: true
+        isSignIn: false
       };
     case Constants.SIGN_UP_FAILURE:
       return {
