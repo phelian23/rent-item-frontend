@@ -27,6 +27,7 @@ const NavBar = () => {
     <div>
         <Navbar collapseOnSelect fixed="top" expand="md" bg="dark" variant="dark" className="d-block main-navigation">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={openNav}/>
+            {/* <div className='icon-container'><FontAwesomeIcon icon={faSearch} className="search-icon d-sm-inline"></FontAwesomeIcon></div> */}
             <div className="d-flex overlay d-lg-none" onClick={closeNav}></div>
             <Container className='d-lg-flex sidebar' id="responsive-navbar-nav">
             <Navbar.Brand href="/" className="order-2 order-lg-1 mr-auto mr-lg-3 ml-3 ml-lg-0">
@@ -58,6 +59,7 @@ const NavBar = () => {
             </Nav>
             )}
             </Container>
+            
         </Navbar>
     </div>
   )
