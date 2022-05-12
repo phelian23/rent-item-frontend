@@ -1,4 +1,5 @@
-import { Constants } from "../actions/constant";
+import Constants from '../actions/constant';
+
 const initialState = {
   user: {},
   isLoading: false,
@@ -11,50 +12,50 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         user: action.payload,
-        isSignIn: true
+        isSignIn: true,
       };
     case Constants.SIGN_IN_FAILURE:
       return {
         ...state,
         user: {},
-        isSignIn: false
+        isSignIn: false,
       };
     case Constants.SIGN_UP_SUCCESS:
       return {
         ...state,
         user: action.payload,
-        isSignIn: false
+        isSignIn: false,
       };
     case Constants.SIGN_UP_FAILURE:
       return {
         ...state,
         user: {},
-        isSignIn: false
+        isSignIn: false,
       };
     case Constants.RESET_PASSWORD_SUCCESS:
       return {
         ...state,
-        user: action.payload
+        user: action.payload,
       };
     case Constants.RESET_PASSWORD_FAILURE:
       return {
         ...state,
-        user: {}
+        user: {},
       };
     case Constants.SIGN_OUT_SUCCESS:
       return {
         ...state,
         user: {},
-        isSignIn: false
+        isSignIn: false,
       };
     case Constants.SIGN_OUT_FAILURE:
       return {
         ...state,
         user: {},
-        isSignIn: true
-      }
+        isSignIn: true,
+      };
     default:
       return state;
   }
-}
+};
 export default userReducer;

@@ -1,34 +1,39 @@
-const BASE_URL = "http://localhost:3000";
+import { getToken } from '../utils/sessions';
+
+const BASE_URL = 'https://cryptic-anchorage-52984.herokuapp.com';
+const user = JSON.parse(localStorage.getItem('userData'));
 
 const getFavourites = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/v1/favourites`, {
-      method: "GET",
+    const response = await fetch(`${BASE_URL}/api/v1/reserveds/${user.id}`, {
+      method: 'GET',
       headers: {
-        "Content-Type": "application/json"
-      }
-    });
-    const favourites = await response.json();
-    return favourites;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-const addFavourite = async (data) => {
-  try {
-    const response = await fetch(`${BASE_URL}/v1/favourites`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json',
+        Authorization: getToken(),
       },
-      body: JSON.stringify(data)
     });
     const json = await response.json();
     return json;
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
-}
+};
+
+const addFavourite = async (data) => {
+  try {
+    const response = await fetch(`${BASE_URL}/api/v1/reserveds`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: getToken(),
+      },
+      body: JSON.stringify(data),
+    });
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
 
 export { getFavourites, addFavourite };

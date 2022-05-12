@@ -1,14 +1,20 @@
-import { getFavourites, addFavourite } from "../../api/favourite";
-import { Constants } from "./constant";
+import { getFavourites, addFavourite } from '../../api/favourite';
+import Constants from './constant';
 
 export const getAllFavourites = () => async (dispatch) => {
-  const response = await getFavourites();
   try {
-    dispatch({ type: Constants.GET_FAVOURITES_SUCCESS, payload: response });
+    const response = await getFavourites();
+    dispatch({
+      type: Constants.GET_FAVOURITES_SUCCESS,
+      payload: response,
+    });
   } catch (error) {
-    dispatch({ type: Constants.GET_FAVOURITES_FAILURE, payload: error });
+    dispatch({
+      type: Constants.GET_FAVOURITES_FAILURE,
+      payload: error,
+    });
   }
-}
+};
 
 export const addToFavourites = (data) => async (dispatch) => {
   const response = await addFavourite(data);
@@ -17,4 +23,4 @@ export const addToFavourites = (data) => async (dispatch) => {
   } catch (error) {
     dispatch({ type: Constants.ADD_FAVOURITE_FAILURE, payload: error });
   }
-}
+};

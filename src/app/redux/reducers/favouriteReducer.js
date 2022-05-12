@@ -1,9 +1,9 @@
-import { Constants } from "../actions/constant";
+import Constants from '../actions/constant';
 
 const initialState = {
   favourites: [],
   isLoading: false,
-}
+};
 
 const favouriteReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -35,6 +35,6 @@ const favouriteReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default favouriteReducer;
