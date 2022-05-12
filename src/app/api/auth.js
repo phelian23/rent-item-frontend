@@ -1,74 +1,70 @@
-import { getToken } from '../utils/sessions'
+import { getToken } from '../utils/sessions';
 
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = 'https://cryptic-anchorage-52984.herokuapp.com';
 
-const hitApiWithSignIn = async (data) => {
+const hitApiWithSignIn = (data) => {
   try {
-      console.log(JSON.stringify(data))
-    const response = await fetch(`${BASE_URL}/users/sign_in`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
+    const response = fetch(`${BASE_URL}/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
     });
-    const json = await response.json();
-    return json;
+    return response;
+  } catch (error) {
+    throw new Error(error);
   }
-  catch (error) {
-    console.log(error);
-  }
-}
+};
 
 const hitApiWithSignUp = async (data) => {
   try {
-    const response = await fetch(`${BASE_URL}/users`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
+    const response = await fetch(`${BASE_URL}/signup`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
     });
     const json = await response.json();
     return json;
+  } catch (error) {
+    throw new Error(error);
   }
-    catch (error) {
-    console.log(error);
-  }
-}
+};
 
 const hitApiWithResetPassword = async (data) => {
-    try {
-        const response = await fetch(`${BASE_URL}/users/resetpassword`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
-        const json = await response.json();
-        return json;
-    }
-        catch (error) {
-        console.log(error);
-    }
-    }
+  try {
+    const response = await fetch(`${BASE_URL}/users/resetpassword`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
 
-    const hitApiWithSignOut = async () => {
-        try {
-            const response = await fetch(`${BASE_URL}/users/sign_out`, {
-                method: "DELETE",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": getToken()
-                }
-            });
-            const json = await response.json();
-            return json;
-        }
-        catch (error) {
-            console.log(error);
-        }
-    }
+const hitApiWithSignOut = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/logout`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: getToken(),
+      },
+    });
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
 
-export { hitApiWithSignIn, hitApiWithSignUp, hitApiWithResetPassword, hitApiWithSignOut };
+export {
+  hitApiWithSignIn, hitApiWithSignUp, hitApiWithResetPassword, hitApiWithSignOut,
+};

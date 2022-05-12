@@ -19,7 +19,7 @@
     align-items: flex-start !important;
     padding-top: 5%;
     padding-left: 5% !important;
-  }  
+  }
 
   .overlay {
     left: 0;
@@ -81,7 +81,7 @@
   border: 1px solid #ced4da;
   appearance: none;
   border-radius: 0.5rem;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .scoot-list-cont {
@@ -120,7 +120,7 @@
   color: rgb(143, 97, 97);
 }
 
-.list-wrapper{
+.list-wrapper {
   overflow: hidden;
 }
 
