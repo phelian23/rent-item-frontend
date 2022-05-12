@@ -1,0 +1,1 @@
+import MyFavourites from './MyFavourites'
