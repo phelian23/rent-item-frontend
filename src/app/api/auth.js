@@ -66,5 +66,8 @@ const hitApiWithSignOut = async () => {
 };
 
 export {
-  hitApiWithSignIn, hitApiWithSignUp, hitApiWithResetPassword, hitApiWithSignOut,
+  hitApiWithSignIn,
+  hitApiWithSignUp,
+  hitApiWithResetPassword,
+  hitApiWithSignOut,
 };

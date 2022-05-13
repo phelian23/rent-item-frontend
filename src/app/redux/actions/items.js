@@ -29,4 +29,7 @@ export const deleteScooterById = (id) => async (dispatch) => {
   }
 };
 
-export const displayScooter = (id) => ({ type: Constants.DISPLAY_SCOOTER, payload: id });
+export const displayScooter = (id) => ({
+  type: Constants.DISPLAY_SCOOTER,
+  payload: id,
+});
