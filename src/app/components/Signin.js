@@ -70,12 +70,16 @@ const Signin = () => {
                 onChange={handleChange}
                 value={user.password}
               />
-              {errors.password && <p className="text-danger">{errors.password}</p>}
+              {errors.password && (
+                <p className="text-danger">{errors.password}</p>
+              )}
             </div>
-            <Button type="submit">Sign In</Button>
+            <Button type="submit" className="form-btn">Sign In</Button>
           </form>
           <p>Don&apos;t have an account?</p>
-          <Button variant="primary" as={Link} to="/signup">Sign Up</Button>
+          <Button className="form-btn" as={Link} to="/signup">
+            Sign Up
+          </Button>
         </div>
       </div>
     </div>

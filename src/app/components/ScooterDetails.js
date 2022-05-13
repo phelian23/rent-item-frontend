@@ -10,8 +10,6 @@ const ScooterDetails = () => {
   const scooter = scooters.find((scooter) => scooter.display === true);
   const user = JSON.parse(localStorage.getItem('userData'));
 
-  console.log(user);
-
   const addToFavouritesHandler = () => {
     const data = {
       reserved: {
@@ -24,7 +22,7 @@ const ScooterDetails = () => {
 
   return (
     <div className="text-lg-center">
-      <div className="p-3 text-center">
+      <div className="p-3 text-center header-det">
         <h1>Scooter Details</h1>
       </div>
       <div>
@@ -35,12 +33,18 @@ const ScooterDetails = () => {
             <p className="card-text">{scooter.price}</p>
           </div>
         </div>
-        <div className="p-3 text-left text-lg-center">
+        <div className="px-5 text-left text-lg-center">
           <p>About this scooter</p>
           <p className="card-text">{scooter.description}</p>
         </div>
       </div>
-      <button type="submit" className="btn btn-primary add-btn mx-auto" onClick={() => addToFavouritesHandler()}>Add to Favourites</button>
+      <button
+        type="submit"
+        className="btn btn-primary add-btn mx-auto"
+        onClick={() => addToFavouritesHandler()}
+      >
+        Add to Favourites
+      </button>
     </div>
   );
 };

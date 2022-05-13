@@ -87,7 +87,9 @@ const SignUp = () => {
                 onChange={handleChange}
                 value={newUser.password}
               />
-              {errors.password && <p className="text-danger">{errors.password}</p>}
+              {errors.password && (
+                <p className="text-danger">{errors.password}</p>
+              )}
             </div>
             <div className="form-group mb-3 mx-3 mx-lg-0">
               <label htmlFor="password2">Confirm Password</label>
@@ -100,14 +102,18 @@ const SignUp = () => {
                 onChange={handleChange}
                 value={newUser.password2}
               />
-              {errors.password2 && <p className="text-danger">{errors.password2}</p>}
+              {errors.password2 && (
+                <p className="text-danger">{errors.password2}</p>
+              )}
             </div>
-            <Button variant="primary" type="submit">
+            <Button className="form-btn" type="submit">
               Sign Up
             </Button>
           </form>
           <p>Already have an account?</p>
-          <Button variant="primary" as={Link} to="/signin">Sign In</Button>
+          <Button className="form-btn" as={Link} to="/signin">
+            Sign In
+          </Button>
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ const getToken = () => {
 };
 
 const clearSession = () => {
-  localStorage.clear();
+  localStorage.removeItem('session-status');
 };
 
 export { getToken, clearSession };

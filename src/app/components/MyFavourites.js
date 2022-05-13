@@ -19,7 +19,7 @@ const MyFavourites = () => {
 
   return (
     <div>
-      <div className="text-center p-3">
+      <div className="text-center p-3 header-det">
         <h1>My Favourites</h1>
       </div>
       <div className="row row-cols-1 row-cols-md-3 g-4">

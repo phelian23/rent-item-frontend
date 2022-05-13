@@ -1,5 +1,8 @@
 import {
-  hitApiWithSignIn, hitApiWithSignUp, hitApiWithResetPassword, hitApiWithSignOut,
+  hitApiWithSignIn,
+  hitApiWithSignUp,
+  hitApiWithResetPassword,
+  hitApiWithSignOut,
 } from '../../api/auth';
 import { clearSession } from '../../utils/sessions';
 import Constants from './constant';
@@ -29,7 +32,8 @@ export const signIn = (data) => (dispatch) => {
         localStorage.setItem('session-status', true);
         dispatch({ type: Constants.SIGN_IN_SUCCESS, payload: response.data });
       }
-    }).catch((error) => {
+    })
+    .catch((error) => {
       dispatch({ type: Constants.SIGN_IN_FAILURE, payload: error });
     });
 };
@@ -39,7 +43,10 @@ export const resetPassword = (data) => async (dispatch) => {
   try {
     dispatch({ type: Constants.RESET_PASSWORD_SUCCESS, payload: response });
   } catch (error) {
-    dispatch({ type: Constants.RESET_PASSWORD_FAILURE, payload: error.response });
+    dispatch({
+      type: Constants.RESET_PASSWORD_FAILURE,
+      payload: error.response,
+    });
   }
 };
 
