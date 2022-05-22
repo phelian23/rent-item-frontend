@@ -1,46 +1,64 @@
-# Getting Started with Create React App and Redux
+# rent-a-scooter-front-end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+A responsive front end application for rent-an-item project. It is a web application based on react-redux, the application shows to the user a collection of scooters fetched from an API, the details include scooter name, photo, price and discription.
+The user can sign up and add new scooters to the collection and have their own favorites collection.
 
-## Available Scripts
 
-In the project directory, you can run:
+# screenshots
+[Screenshot](./images/screenshot-desktop.png)
+> |![Screenshot](./images/screenshot-desktop.png)|![Screenshot](./images/screenshot-mobile.png)|!
 
-### `npm start`
+# Live link for API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ [Click Me!](https://cryptic-anchorage-52984.herokuapp.com)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Built With
 
-### `npm test`
+- React
+- Redux
+- VScode
+- Linters
+- Git & GitHub
+## Getting Started
+In your terminal, run the following commands:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+``` 
+git clone https://github.com/phelian23/rent-item-frontend.git
+cd rent-item-frontend
+npm install
+npm start
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Authors
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Our team is composed of:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+👤 **Oluwafemi Awoyemi**
+- GitHub: [@phelian23](https://github.com/phelian23)
+- LinkedIn: [Oluwafemi Awoyemi](https://www.linkedin.com/in/oluwafemi-awoyemi/)
 
-### `npm run eject`
+👤 **Munsa Mibenge**
+- GitHub: [@Munsa1](https://github.com/Munsa1)
+- LinkedIn: [@Munsa1](https://www.linkedin.com/in/munsa-mibenge/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+👤 **Rayan Rassam**
+- GitHub: [@Rayan84](https://github.com/Rayan84)
+- LinkedIn: [@Rayan84](https://www.linkedin.com/in/rayan-rassam/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🤝 Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Contributions, issues, and feature requests are welcome!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Feel free to check the [issues page](../../issues/).
 
-## Learn More
+## Show your support
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Give a ⭐️ if you like this project!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Acknowledgments
+
+- [Alexey Savitskiy](https://www.behance.net/alexey_savitskiy) for the awesome [design](https://www.behance.net/gallery/37706679/Circle-(Landing-page-Dashboard-Mobile-App)) for our front-end.
+## 📝 License
+
+- This project is [MIT](./LICENSE) licensed.
